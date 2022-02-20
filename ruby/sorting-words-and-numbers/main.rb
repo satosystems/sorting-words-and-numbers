@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-while line = gets
+while line = gets.chomp
   classified_words = {
     numerical_digits: [],
     others: [],
