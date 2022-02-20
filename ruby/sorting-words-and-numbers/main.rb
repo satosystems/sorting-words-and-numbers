@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-loop do
+while line = gets
   sorted = [[], []]
-  line = gets
-  next if line.nil?
 
   line.split(' ').each do |word|
     if word.match?(/^\d+$/)
