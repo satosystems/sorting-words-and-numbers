@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
 while line = gets
-  sorted = [[], []]
+  classified_words = {
+    numerical_digits: [],
+    others: [],
+  }
 
   line.split(' ').each do |word|
     if word.match?(/^\d+$/)
-      sorted[1].append(word)
+      classified_words[:numerical_digits].append(word)
     else
-      sorted[0].append(word)
+      classified_words[:others].append(word)
     end
   end
-  print(sorted, "\n")
+  print(classified_words, "\n")
 end
