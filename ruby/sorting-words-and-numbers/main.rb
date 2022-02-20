@@ -6,7 +6,7 @@ loop do
   next if line.nil?
 
   line.split(' ').each do |word|
-    if /\d+/.match(word)
+    if /^\d+$/.match(word)
       sorted[1].append(word)
     else
       sorted[0].append(word)
