@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+SEPARATER = ' '
 
 while line = gets.chomp
   classified_words = {
@@ -6,7 +7,7 @@ while line = gets.chomp
     others: [],
   }
 
-  line.split(' ').each do |word|
+  line.split(SEPARATER).each do |word|
     if word.match?(/^\d+$/)
       classified_words[:numerical_digits].append(word)
     else
