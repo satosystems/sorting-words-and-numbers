@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 SEPARATER = ' '
 
-while line = gets.chomp
+while line = gets&.chomp
   classified_words = {
     numerical_digits: [],
     others: [],
