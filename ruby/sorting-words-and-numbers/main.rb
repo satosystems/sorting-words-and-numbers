@@ -13,5 +13,6 @@ while line = gets
       classified_words[:others].append(word)
     end
   end
-  print(classified_words, "\n")
+
+  p classified_words
 end
