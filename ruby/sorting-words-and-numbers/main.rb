@@ -1,16 +1,19 @@
 # frozen_string_literal: true
+SEPARATER = ' '
 
-loop do
-  sorted = [[], []]
-  line = gets
-  next if line.nil?
+while line = gets&.chomp
+  classified_words = {
+    numerical_digits: [],
+    others: [],
+  }
 
-  line.split(' ').each do |word|
-    if /\d+/.match(word)
-      sorted[1].append(word)
+  line.split(SEPARATER).each do |word|
+    if word.match?(/^\d+$/)
+      classified_words[:numerical_digits].append(word)
     else
-      sorted[0].append(word)
+      classified_words[:others].append(word)
     end
   end
-  print(sorted, "\n")
+
+  p classified_words
 end
